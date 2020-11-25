@@ -4,6 +4,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import firebase from 'firebase/app';
 import { SignIn } from './SignIn';
+import { SignOut } from './SignOut';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -33,8 +34,8 @@ function App() {
       <header className="App-header">
       </header>
       <section>
-        {/* {user ? <ChatRoom /> : <SignIn />} */}
-        <SignIn />
+        {user ? <SignOut /> : <SignIn />}
+        {/* <SignIn /> */}
         {/* (user can be object or null) */}
       </section>
     </div>
