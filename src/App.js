@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import 'firebase/firestore';
 import 'firebase/auth';
+import firebase from 'firebase/app';
+import { SignIn } from './SignIn';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -19,20 +21,22 @@ firebase.initializeApp({
 });
 
 // references
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
-const [user] = useAuthState(auth);
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
 function App() {
+
+
+  const [user] = useAuthState(auth);
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      <>
-        {user ? <ChatRoom /> : <SignIn />}
+      <section>
+        {/* {user ? <ChatRoom /> : <SignIn />} */}
+        <SignIn />
         {/* (user can be object or null) */}
-      </>
+      </section>
     </div>
   );
 }
