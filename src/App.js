@@ -9,6 +9,7 @@ import { SignOut } from './SignOut';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatRoom from './ChatRoom';
+import Navbar from './Navbar';
 
 firebase.initializeApp({
   apiKey: "AIzaSyBb1TX6Lozb9ipkX4Cbvl9JHEnW3M8RLU8",
@@ -35,14 +36,11 @@ function App() {
     <div className="App">
       <section>
         {user ? (
-
           <>
-            <h2>{`Signed in as ${user.email}`}</h2>
+            <Navbar userEmail={user.email} />
             <ChatRoom />
             <SignOut />
           </>) : <SignIn />}
-        {/* <SignIn /> */}
-        {/* (user can be object or null) */}
       </section>
     </div>
   );

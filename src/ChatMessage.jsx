@@ -4,11 +4,12 @@ import './styles/ChatMessageStyle.css';
 
 export const ChatMessage = (props) => {
     const { text, uid, photoURL } = props.message;
+    // const messageText = props.data.text;
 
     //ternary magic, string according to codition
     const sendRecieved = uid === auth.currentUser.userId ? "sent" : "received";
-    console.log("uid: " + uid);
-    console.log(sendRecieved);
+    // console.log("uid: " + uid);
+    // console.log(sendRecieved);
 
     return (
         // <div className={{ sendRecieved }}>
@@ -17,6 +18,7 @@ export const ChatMessage = (props) => {
             <img src={photoURL} />
             <p>{uid}</p>
             <div className="textbox">
+                {/* <p>{text}</p> */}
                 <p>{text}</p>
             </div>
         </div>
