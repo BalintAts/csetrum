@@ -1,0 +1,15 @@
+.message {
+    justify-content: flex-start;
+    background-color: red;
+}
+
+.sent p {
+    background-color: red;
+    /* justify-self: end; */
+    text-align: right;    
+}
+
+.recieved p {
+    text-align: left;
+}
+
