@@ -8,6 +8,7 @@ import { SignOut } from './SignOut';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import ChatRoom from './ChatRoom';
 
 firebase.initializeApp({
   apiKey: "AIzaSyBb1TX6Lozb9ipkX4Cbvl9JHEnW3M8RLU8",
@@ -31,10 +32,12 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
       <section>
-        {user ? <SignOut /> : <SignIn />}
+        {user ? (
+          <>
+            <ChatRoom />
+            <SignOut />
+          </>) : <SignIn />}
         {/* <SignIn /> */}
         {/* (user can be object or null) */}
       </section>
