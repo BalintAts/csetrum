@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { ChatMessage } from './ChatMessage';
+import './styles/roomStyle.css';
 
 const ChatRoom = () => {
 
@@ -34,7 +35,7 @@ const ChatRoom = () => {
 
     return (
         <>
-            <div>
+            <div className="chat">
                 {/* if not null, iterate over the messages array, and create CahtMessage components, msg goes into props.message */}
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
             </div>
@@ -42,7 +43,7 @@ const ChatRoom = () => {
                 {/* <input value={formValue} onChange={(e) => setFormValue(e.target.value)} /> */}
                 <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
 
-                <button type="submit"> Send</button>
+                <button className="submit" type="submit"> Send</button>
             </form>
         </>
     )

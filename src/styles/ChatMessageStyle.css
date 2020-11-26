@@ -1,15 +1,52 @@
-.message {
+.sent {
+    display: flex;
+    justify-content: flex-end;
+    background-color: blue;
+}
+
+.recieved {
+    display: flex;
     justify-content: flex-start;
-    background-color: red;
+    background-color: blue;
+
 }
 
-.sent p {
-    background-color: red;
-    /* justify-self: end; */
-    text-align: right;    
+p {
+    padding: 5px;
 }
 
-.recieved p {
-    text-align: left;
+.textbox {
+    margin: 5%;
+    border-radius: 30px;
+    background-color: yellow;
 }
 
+.chat {
+    background-color: blue;
+}
+
+.submit{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+submit:hover{
+    background-color:#4095c6;
+}
+
+    /* @media all and (max-width:30em){
+     .submit{
+    display:block;
+    margin:0.2em auto;
+     }
+} */

@@ -30,11 +30,14 @@ function App() {
 
 
   const [user] = useAuthState(auth);
+  user && console.log("EMAIL: " + user.email);
   return (
     <div className="App">
       <section>
         {user ? (
+
           <>
+            <h2>{`Signed in as ${user.email}`}</h2>
             <ChatRoom />
             <SignOut />
           </>) : <SignIn />}
